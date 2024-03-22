@@ -20,4 +20,5 @@ opencv-python-headless
 requests
 mongoengine
 python-box
+colorlog
 -e .

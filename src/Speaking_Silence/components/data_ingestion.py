@@ -65,9 +65,6 @@ class DataIngestion:
                     continue
             
             # Save the sign instance document to MongoDB
-            print("----"*50)
-            print(sign_instance.instances)
-            print("----"*50)
             if not sign_instance.instances == []:
                 sign_instance.save()
             logger.info(f"Sign instance document for gloss '{gloss}' saved to MongoDB")
