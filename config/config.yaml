@@ -1,0 +1,8 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  json_file: deaf_sign_dataset.json
+  artifact_folder: artifacts
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+  db_name: "college-project"
+  db_host: "mongodb+srv://niral0901:d3gAL01dwlOnqmLQ@college-project.iwlsqpp.mongodb.net/"
