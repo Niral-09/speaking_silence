@@ -1,4 +1,4 @@
-tensorflow
+tensorflow==2.15.1
 pandas 
 dvc
 mlflow
@@ -16,9 +16,14 @@ scipy
 Flask
 Flask-Cors
 gdown
-opencv-python-headless
+# opencv-python-headless
 requests
 mongoengine
 python-box
 colorlog
+mediapipe
+opencv-python 
+mediapipe==0.10.9
+scikit-learn 
+matplotlib
 -e .

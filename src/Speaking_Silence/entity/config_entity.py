@@ -15,9 +15,10 @@ class DataIngestionConfig:
 class PrepareBaseModelConfig:
     root_dir: Path  # Root directory of the project
     base_model_path: Path  # Path to save the base model
-    updated_base_model_path: Path  # Path to save the updated base model
 
-    input_shape: tuple  # Input shape of the model (e.g., (height, width, channels))
+    image_height: int  # Input shape of the model (e.g., (height, width, channels))
+    image_width:int 
+    sequence_length: int  # Length of the input sequence (e.g., number of frames)
     num_classes: int  # Number of gesture classes
     learning_rate: float  # Learning rate for model training
     include_top: bool  # Whether to include the top layers (True for fine-tuning)
