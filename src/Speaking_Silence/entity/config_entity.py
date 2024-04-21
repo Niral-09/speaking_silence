@@ -22,3 +22,20 @@ class PrepareBaseModelConfig:
     num_classes: int  # Number of gesture classes
     learning_rate: float  # Learning rate for model training
     include_top: bool  # Whether to include the top layers (True for fine-tuning)
+
+
+
+@dataclass(frozen=True)
+class TrainingConfig:
+    root_dir: Path
+    base_model_path: Path
+    trained_model_path: Path
+
+    training_data_path: Path
+    params_epochs: int
+    params_batch_size: int
+    params_is_augmentation: bool
+    image_height: int
+    image_width: int
+    sequence_length: int
+    classes_list: list[str]

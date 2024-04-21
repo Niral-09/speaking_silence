@@ -1,6 +1,6 @@
 from Speaking_Silence.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from Speaking_Silence.utils.common import read_yaml, create_directories
-from Speaking_Silence.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig
+from Speaking_Silence.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig
 import os
 from pathlib import Path
 
@@ -48,3 +48,25 @@ class ConfigurationManager:
         )
 
         return prepare_base_model_config
+
+    def get_training_config(self) -> TrainingConfig:
+        training = self.config.training
+        prepare_base_model = self.config.prepare_base_model
+        params = self.params
+        training_data = (self.config.prepare_base_model.dataset_dir)
+
+        training_config = TrainingConfig(
+            root_dir=Path(training.root_dir),
+            base_model_path=Path(prepare_base_model.base_model_path),
+            trained_model_path=Path(training.trained_model_path),
+            training_data_path=Path(training_data),
+            params_epochs=params.EPOCHS,
+            params_batch_size=params.BATCH_SIZE,
+            params_is_augmentation=params.AUGMENTATION,
+            image_height=self.params.IMAGE_HEIGHT,
+            image_width=self.params.IMAGE_WIDTH,
+            sequence_length=self.params.SEQUENCE_LENGTH,
+            classes_list=self.params.CLASSES_LIST,
+        )
+
+        return training_config
