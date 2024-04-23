@@ -39,3 +39,10 @@ class TrainingConfig:
     image_width: int
     sequence_length: int
     classes_list: list[str]
+
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    all_params: dict
+    mlflow_uri: str

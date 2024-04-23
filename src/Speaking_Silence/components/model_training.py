@@ -96,6 +96,8 @@ class Training:
         features_train, features_test, labels_train, labels_test = train_test_split(features, one_hot_encoded_labels,
                                                                             test_size = 0.25, shuffle = True,
                                                                             random_state = seed_constant)
+        np.save('artifacts/training/features_test.npy', features_test)
+        np.save('artifacts/training/labels_test.npy', labels_test)
         LRCN_model = self.model
         plot_model(LRCN_model, to_file = 'artifacts/training/LRCN_model_structure_plot.png', show_shapes = True, show_layer_names = True)
         LRCN_model.compile(loss = 'categorical_crossentropy', optimizer = 'Adam', metrics = ["accuracy"])

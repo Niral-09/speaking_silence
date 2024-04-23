@@ -1,6 +1,6 @@
 from Speaking_Silence.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from Speaking_Silence.utils.common import read_yaml, create_directories
-from Speaking_Silence.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig
+from Speaking_Silence.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig, EvaluationConfig
 import os
 from pathlib import Path
 
@@ -70,3 +70,11 @@ class ConfigurationManager:
         )
 
         return training_config
+
+    def get_evaluation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model=self.config.training.trained_model_path,
+            mlflow_uri=os.environ["MLFLOW_TRACKING_URI"],
+            all_params=self.params,
+        ) 
+        return eval_config
