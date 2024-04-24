@@ -114,3 +114,4 @@ class Training:
         self.plot_metric(LRCN_model_training_history, 'accuracy', 'val_accuracy', 'Total Accuracy vs Total Validation Accuracy')
 
         LRCN_model.save(self.config.trained_model_path)
+        LRCN_model.save(self.config.use_models_path)

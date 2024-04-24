@@ -50,6 +50,7 @@ class ConfigurationManager:
         return prepare_base_model_config
 
     def get_training_config(self) -> TrainingConfig:
+        create_directories([self.config.training.use_model])
         training = self.config.training
         prepare_base_model = self.config.prepare_base_model
         params = self.params
@@ -59,6 +60,7 @@ class ConfigurationManager:
             root_dir=Path(training.root_dir),
             base_model_path=Path(prepare_base_model.base_model_path),
             trained_model_path=Path(training.trained_model_path),
+            use_models_path=Path(training.use_model_path),
             training_data_path=Path(training_data),
             params_epochs=params.EPOCHS,
             params_batch_size=params.BATCH_SIZE,

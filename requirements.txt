@@ -16,6 +16,7 @@ scipy
 Flask
 Flask-Cors
 gdown
+streamlit
 # opencv-python-headless
 requests
 mongoengine
@@ -26,4 +27,6 @@ opencv-python
 mediapipe==0.10.9
 scikit-learn 
 matplotlib
+fastapi
+uvicorn
 -e .

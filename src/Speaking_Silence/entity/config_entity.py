@@ -30,7 +30,7 @@ class TrainingConfig:
     root_dir: Path
     base_model_path: Path
     trained_model_path: Path
-
+    use_models_path: Path
     training_data_path: Path
     params_epochs: int
     params_batch_size: int

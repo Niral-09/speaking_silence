@@ -25,6 +25,8 @@ class DataIngestion:
         logger.info(f"Downloading data")
         for entry in data:
             gloss = entry['gloss']
+            if gloss not in ["all", "computer", "before", "cool"]:
+                continue 
             logger.info(f"Downloading data for gloss {gloss}...")
             instances = entry['instances']
             
