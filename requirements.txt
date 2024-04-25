@@ -2,7 +2,7 @@ tensorflow==2.15.1
 pandas 
 dvc
 mlflow
-notebook
+ipykernel
 numpy
 matplotlib
 seaborn
@@ -29,4 +29,6 @@ scikit-learn
 matplotlib
 fastapi
 uvicorn
+googletrans==4.0.0-rc1
+gtts
 -e .
